@@ -34,8 +34,8 @@ WAREHOUSE = [
 def returns_the_item_in_that_bay(bay_required)
   
   for bay in WAREHOUSE
-    if bay[bay_required]
-      item = bay[bay_required]
+    if bay[bay_required.to_sym]
+      item = bay[bay_required.to_sym]
     # puts WAREHOUSE[1][1]
     end
   #else puts "not in the warehouse"
