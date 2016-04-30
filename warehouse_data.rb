@@ -1,3 +1,6 @@
+
+require ('pry-byebug') 
+
 WAREHOUSE = [
 { b7: " bath fizzers "}, 
 { a3: " blouse "}, 
@@ -31,11 +34,10 @@ WAREHOUSE = [
 { c4: " word search "} 
 ]
 
-def returns_the_item_in_that_bay(bay_required)
-  
+def returns_the_item_in_that_bay(bay_given)
   for bay in WAREHOUSE
-    if bay[bay_required.to_sym]
-      item = bay[bay_required.to_sym]
+    if bay[bay_given.to_sym]
+      item = bay[bay_given.to_sym]
     # puts WAREHOUSE[1][1]
     end
   #else puts "not in the warehouse"
@@ -43,4 +45,19 @@ def returns_the_item_in_that_bay(bay_required)
   return item
 end
 
-returns_the_item_in_that_bay(:b8)
+# returns_the_item_in_that_bay(:b8)
+
+def return_the_bay_that_item_is_in(item_given)
+  for item in WAREHOUSE
+    # binding.pry
+    puts item.values[0]
+    puts item_given
+    if item.values[0] == item_given
+    bay = item.keys[0]
+    puts bay 
+    end
+  end
+  return bay.to_s
+end
+
+return_the_bay_that_item_is_in(" nail filer ")
